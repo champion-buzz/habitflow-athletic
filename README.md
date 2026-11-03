@@ -35,14 +35,13 @@ The biggest lesson from this project is not to jump straight into coding. Buildi
 2. **Build toward that picture.** With the goal clear, each piece of code has a purpose.
 3. **Make small changes along the way.** The plan doesn't have to be perfect. Minor changes here and there are fine, as long as the overall picture stays the same.
 
-The duplicate workout plan listed below shows why this matters. What should happen when the page loads a second time is the kind of question to answer before coding.
+An early bug shows why this matters: the daily workout plan was added again on every page load. What should happen when the page loads a second time is the kind of question to answer before coding.
 
 ## Known Issues and Next Steps
 
-- The daily workout plan is added again on every page load, which creates duplicates
 - The app only lets you check off today, so past days can't be corrected
 - Add a way to delete habits
-- Add tests
+- Add tests for the app screens
 
 ## Run It
 
@@ -52,3 +51,5 @@ npm start
 ```
 
 Then open http://localhost:3000.
+
+Run the tests with `npm test`.
