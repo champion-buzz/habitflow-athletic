@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# HabitFlow
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A habit tracker for workouts and daily routines, built with React. Add your own habits or start from a template, check them off each day, and see your week in a chart.
 
-## Available Scripts
+**Live demo:** https://habitflow-athletic.vercel.app/
 
-In the project directory, you can run:
+![HabitFlow screenshot](screenshot.png)
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React 18
+- Tailwind CSS
+- Chart.js with react-chartjs-2
+- Heroicons
+- Browser localStorage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Add habits with a weekly goal
+- Check off habits for today
+- Start from templates: Beginner Workout, Mental Toughness and Nutrition Focus
+- Get a workout plan for each day from Monday to Saturday
+- See the last 7 days in a progress chart
+- Keep your data in the browser, with no account or backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How It Works
 
-### `npm run build`
+The app is a single React component. Habits live in state and are saved to localStorage whenever they change. Each habit stores its completions by date, and the weekly chart reads from those dates.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Known Issues and Next Steps
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- The daily workout plan is added again on every page load, which creates duplicates
+- The app only lets you check off today, so past days can't be corrected
+- Add a way to delete habits
+- Add tests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Run It
 
-### `npm run eject`
+```bash
+npm install
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Then open http://localhost:3000.
