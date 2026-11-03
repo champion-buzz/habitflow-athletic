@@ -14,6 +14,7 @@ import {
   TrophyIcon,
   FireIcon,
 } from "@heroicons/react/24/solid";
+import { addMissingHabits, dedupeHabits } from "./habits";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
@@ -34,7 +35,7 @@ function getWeekDays() {
 export default function App() {
   const [habits, setHabits] = useState(() => {
     const saved = localStorage.getItem("habits");
-    return saved ? JSON.parse(saved) : [];
+    return saved ? dedupeHabits(JSON.parse(saved)) : [];
   });
 
   const [newHabit, setNewHabit] = useState("");
@@ -120,14 +121,7 @@ export default function App() {
     };
     const todayHabits = weeklyTemplate[day];
     if (todayHabits) {
-      const added = todayHabits.map((name) => ({
-        id: Date.now() + Math.random(),
-        name,
-        completions: {},
-        streak: 0,
-        goal,
-      }));
-      setHabits((h) => [...h, ...added]);
+      setHabits((h) => addMissingHabits(h, todayHabits, goal));
     }
   }, []);
 
